@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lostsearch.mapper.UserMapper"><!--mapper包下UserMapper接口文件-->
+
+    <select id="getbynameandpassword" resultType="User">
+        select * from user where username= #{username} and password = #{password};
+    </select>
+    <select id="getbystudentid" resultType="Object">
+        select studnetid from user where studentid= #{studentid} ;
+    </select>
+    <insert id="insertusers" >
+        insert into user(studentid,password,username) value(#{studentid},#{password},#{username});
+    </insert>
+</mapper>
